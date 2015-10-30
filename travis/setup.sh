@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo $KEY_FILE== | base64 --decode > gcloud_key_file.json
+echo $KEY_FILE | base64 --decode > gcloud_key_file.json
 
 set -x
 
