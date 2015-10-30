@@ -11,4 +11,6 @@ curl https://sdk.cloud.google.com | bash
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 PATH=`pwd`/depot_tools:"$PATH"
 
-gclient sync
+mkdir src
+echo "success" > src/LICENSE
+# gclient sync
