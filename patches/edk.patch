@@ -1,0 +1,13 @@
+diff --git a/mojo/edk/system/channel_endpoint_id.h b/mojo/edk/system/channel_endpoint_id.h
+index cf968c1..d1cb000 100644
+--- a/mojo/edk/system/channel_endpoint_id.h
++++ b/mojo/edk/system/channel_endpoint_id.h
+@@ -133,7 +133,7 @@ namespace std {
+ // Specialization of |std::hash<>| for |ChannelEndpointId|s, so they can be used
+ // in unordered sets/maps.
+ template <>
+-struct hash<mojo::system::ChannelEndpointId> {
++class hash<mojo::system::ChannelEndpointId> {
+   size_t operator()(mojo::system::ChannelEndpointId channel_endpoint_id) const {
+     return static_cast<size_t>(channel_endpoint_id.value());
+   }

@@ -12,11 +12,10 @@ GIT_REVISION=`git rev-parse HEAD`
 # $GCLOUD auth activate-service-account --key-file ../gcloud_key_file.json
 
 ./sky/tools/gn --release
-gn args out/Release --list --short
 
 if [ $TRAVIS_OS_NAME = "linux" ]
 then
-  ninja -C out/Release -v
+  ninja -C out/Release
   # STORAGE_BASE_URL=gs://mojo_infra/flutter/linux-x64/$GIT_REVISION
   # Is there some way to use gzip with files that lack extensions?
   # $GSUTIL cp out/Release/sky_snapshot $STORAGE_BASE_URL/sky_snapshot

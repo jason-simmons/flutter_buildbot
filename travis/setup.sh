@@ -17,3 +17,4 @@ git clone https://github.com/flutter/engine.git src
 cd src
 git checkout $GIT_REVISION
 gclient sync
+patch -p1 <../patches/edk.patch
