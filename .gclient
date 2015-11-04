@@ -8,3 +8,4 @@ solutions = [
     "safesync_url": "",
   },
 ]
+target_os = ["android"]

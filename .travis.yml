@@ -11,11 +11,15 @@ addons:
     packages:
     - gcc-4.9
     - g++-4.9
+    - ant
+    - ia32-libs
     - libdbus-glib-1-dev
     - libegl1-mesa-dev
     - libgconf2-dev
     - libnss3-dev
     - libxtst-dev
+    - openjdk-7-jdk
+    - openjdk-7-jre
     - python-openssl
 before_script:
   - ./travis/setup.sh
