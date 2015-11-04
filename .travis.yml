@@ -16,6 +16,8 @@ addons:
     - g++-4.9
     - ant
     - ia32-libs
+    - lib32z1-dev
+    - lib32stdc++6
     - libdbus-glib-1-dev
     - libegl1-mesa-dev
     - libgconf2-dev

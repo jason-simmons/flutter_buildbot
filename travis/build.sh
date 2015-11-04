@@ -26,6 +26,7 @@ if [ $TRAVIS_OS_NAME = "linux" ]; then
   fi
 
   if [ $BUILD_TARGET = "host" ]; then
+    echo "****** OOPS(host) ******"
     # ninja -C out/Release
 
     # rm -rf out/Release/gen/dart-pkg/sky_engine/packages
@@ -47,8 +48,9 @@ if [ $TRAVIS_OS_NAME = "linux" ]; then
   fi
 fi
 
-# if [ $TRAVIS_OS_NAME = "osx" ]; then
-#   ninja -C out/Release sky_snapshot
-#   STORAGE_BASE_URL=gs://mojo_infra/flutter/darwin-x64/$GIT_REVISION
-#   $GSUTIL cp out/Release/sky_snapshot $STORAGE_BASE_URL/sky_snapshot
-# fi
+if [ $TRAVIS_OS_NAME = "osx" ]; then
+  echo "****** OOPS(osx) ******"
+# ninja -C out/Release sky_snapshot
+# STORAGE_BASE_URL=gs://mojo_infra/flutter/darwin-x64/$GIT_REVISION
+# $GSUTIL cp out/Release/sky_snapshot $STORAGE_BASE_URL/sky_snapshot
+fi
