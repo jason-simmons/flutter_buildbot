@@ -1,6 +1,9 @@
 language: cpp
 os:
   - linux
+env:
+  - BUILD_TARGET=device
+  # - BUILD_TARGET=host
 sudo: false
 compiler:
   - gcc
