@@ -8,12 +8,13 @@ compiler:
 addons:
   apt:
     packages:
-    - gcc-4.8
     - g++-4.8
+    - gcc-4.8
     - libdbus-glib-1-dev
     - libegl1-mesa-dev
     - libgconf2-dev
     - libnss3-dev
+    - libpangocairo-1.0-0
     - libxtst-dev
     - python-openssl
 before_script:
