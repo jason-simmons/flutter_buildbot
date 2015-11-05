@@ -14,7 +14,6 @@ addons:
     - libegl1-mesa-dev
     - libgconf2-dev
     - libnss3-dev
-    - libpangocairo
     - libxtst-dev
     - python-openssl
 before_script:
