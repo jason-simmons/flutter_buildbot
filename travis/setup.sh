@@ -5,6 +5,8 @@ echo $KEY_FILE | base64 --decode > gcloud_key_file.json
 
 set -x
 
+sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install libpangocairo-1.0-0
+
 export CLOUDSDK_CORE_DISABLE_PROMPTS=1
 curl https://sdk.cloud.google.com | bash
 
