@@ -1,0 +1,13 @@
+diff --git a/build/config/linux/BUILD.gn b/build/config/linux/BUILD.gn
+index 37975dc..12f1af0 100644
+--- a/build/config/linux/BUILD.gn
++++ b/build/config/linux/BUILD.gn
+@@ -53,7 +53,7 @@ pkg_config("glib") {
+ }
+
+ pkg_config("pangocairo") {
+-  packages = [ "pangocairo" ]
++  packages = [ "libpangocairo-1.0-0" ]
+ }
+
+ pkg_config("pangoft2") {
