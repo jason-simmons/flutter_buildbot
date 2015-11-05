@@ -1,13 +1,12 @@
 language: cpp
 os:
-  - osx
-sudo: false
+  - linux
+sudo: required
+dist: trusty
 compiler:
   - gcc
 addons:
   apt:
-    sources:
-    - ubuntu-toolchain-r-test
     packages:
     - gcc-4.8
     - g++-4.8
