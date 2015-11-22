@@ -2,6 +2,9 @@ language: cpp
 os:
   - osx
   - linux
+env:
+  - BUILD_TARGET=device
+  - BUILD_TARGET=host
 sudo: required
 dist: trusty
 compiler:
