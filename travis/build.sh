@@ -13,6 +13,14 @@ $GCLOUD auth activate-service-account --key-file ../gcloud_key_file.json
 
 ./sky/tools/gn --release
 
+if [ $TRAVIS_OS_NAME = "linux" ]
+then
+  ninja -C out/Release
+  STORAGE_BASE_URL=gs://mojo_infra/flutter/$GIT_REVISION/linux-x64
+  zip -j /tmp/artifacts.zip out/Release/icudtl.dat out/Release/sky_shell out/Release/sky_snapshot out/Release/flutter.mojo
+  $GSUTIL cp /tmp/artifacts.zip $STORAGE_BASE_URL/artifacts.zip
+fi
+
 if [ $TRAVIS_OS_NAME = "osx" ]
 then
   ninja -C out/Release sky_snapshot

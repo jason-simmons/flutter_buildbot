@@ -1,22 +1,23 @@
 language: cpp
 os:
   - osx
-sudo: false
+  - linux
+sudo: required
+dist: trusty
 compiler:
   - gcc
 addons:
   apt:
-    sources:
-    - ubuntu-toolchain-r-test
     packages:
-    - gcc-4.8
-    - g++-4.8
-    - libdbus-glib-1-dev
-    - libegl1-mesa-dev
-    - libgconf2-dev
-    - libnss3-dev
-    - libxtst-dev
-    - python-openssl
+      - g++-4.8
+      - gcc-4.8
+      - libegl1-mesa-dev
+      - libfontconfig1-dev
+      - libfreetype6-dev
+      - libxcomposite-dev
+      - libxcursor-dev
+      - libxrender-dev
+      - libxtst-dev
 before_script:
   - ./travis/setup.sh
 script:
