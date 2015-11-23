@@ -5,11 +5,6 @@ echo $KEY_FILE | base64 --decode > gcloud_key_file.json
 
 set -x
 
-if [ $TRAVIS_OS_NAME = "osx" ] && [ $BUILD_TARGET = "device" ]; then
-  # We don't yet build an iOS artifacts from this repository.
-  exit 0
-fi
-
 export CLOUDSDK_CORE_DISABLE_PROMPTS=1
 curl https://sdk.cloud.google.com | bash
 
@@ -23,7 +18,7 @@ cd src
 git checkout $GIT_REVISION
 gclient sync
 
-if [ $BUILD_TARGET = "device" ]; then
+if [ $TRAVIS_OS_NAME = "linux" ] && [ $BUILD_TARGET = "device" ]; then
   sudo dpkg --print-foreign-architectures
   sudo dpkg --add-architecture i386
   sudo apt-get update
