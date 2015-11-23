@@ -1,6 +1,11 @@
 #!/bin/bash
 set -ex
 
+if [ $TRAVIS_OS_NAME = "osx" ] && [ $BUILD_TARGET = "device" ]; then
+  # We don't yet build an iOS artifacts from this repository.
+  exit 0
+fi
+
 PATH=`pwd`/depot_tools:"$PATH"
 cd src
 
@@ -41,8 +46,7 @@ if [ $TRAVIS_OS_NAME = "linux" ]; then
   fi
 fi
 
-if [ $TRAVIS_OS_NAME = "osx" ]
-then
+if [ $TRAVIS_OS_NAME = "osx" ]; then
   if [ $BUILD_TARGET = "device" ]; then
     # We don't yet build an iOS artifacts from this repository.
     exit 0

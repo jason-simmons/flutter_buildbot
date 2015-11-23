@@ -6,7 +6,6 @@ echo $KEY_FILE | base64 --decode > gcloud_key_file.json
 set -x
 
 if [ $TRAVIS_OS_NAME = "osx" ] && [ $BUILD_TARGET = "device" ]; then
-  mkdir src
   # We don't yet build an iOS artifacts from this repository.
   exit 0
 fi
