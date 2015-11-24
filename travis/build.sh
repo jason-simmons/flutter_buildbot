@@ -50,6 +50,7 @@ if [ $TRAVIS_OS_NAME = "osx" ]; then
     # zip -r /tmp/artifacts.zip Flutter
     # popd
     # $GSUTIL cp /tmp/artifacts.zip $STORAGE_BASE_URL/artifacts.zip
+    exit 0
   fi
 
   if [ $BUILD_TARGET = "host" ]; then
