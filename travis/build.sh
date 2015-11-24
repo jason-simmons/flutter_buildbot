@@ -43,13 +43,13 @@ fi
 
 if [ $TRAVIS_OS_NAME = "osx" ]; then
   if [ $BUILD_TARGET = "device" ]; then
-    ./sky/tools/gn --ios --release
-    ninja -C out/ios_Release
-    STORAGE_BASE_URL=gs://mojo_infra/flutter/$GIT_REVISION/ios-arm64
-    pushd out/ios_Release
-    zip -r /tmp/artifacts.zip Flutter
-    popd
-    $GSUTIL cp /tmp/artifacts.zip $STORAGE_BASE_URL/artifacts.zip
+    # ./sky/tools/gn --ios --release
+    # ninja -C out/ios_Release
+    # STORAGE_BASE_URL=gs://mojo_infra/flutter/$GIT_REVISION/ios-arm64
+    # pushd out/ios_Release
+    # zip -r /tmp/artifacts.zip Flutter
+    # popd
+    # $GSUTIL cp /tmp/artifacts.zip $STORAGE_BASE_URL/artifacts.zip
   fi
 
   if [ $BUILD_TARGET = "host" ]; then
